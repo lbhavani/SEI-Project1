@@ -31,6 +31,7 @@ body {
         border-radius: 10px;
        background-color: lightgreen;
        margin: 4px;
+       
     }
     .choiceStyle{
         text-align: left;
@@ -44,6 +45,10 @@ body {
  grid-row:1 /span5;
  grid-column:1 /span1;
  height: 15%
+}
+#selections{
+    text-align: left;
+    padding: 10px;
 }
 
 #left-nav {
@@ -74,7 +79,8 @@ body {
 #footer2 {
     border: 4px solid rgb(211, 211, 211);
     grid-row:5 /span1;
-    grid-column:1 /span5
+    grid-column:1 /span5;
+    align-items: center;
 }
 
 #q {
