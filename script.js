@@ -33,7 +33,6 @@ function resetQuiz(){
             console.log(response);
             categoryItems=response.data.trivia_categories;
 
-            //TODO : Populate category dropdown.
             var newOpt; 
             for(i=0; i<categoryItems.length; i++){
                 newOpt= document.createElement('option')  
@@ -89,7 +88,7 @@ function msg(m){
         msg ("Sorry. Incorrect Answer.");
     }
     if(questionList.length==(curQNo+1)){
-        nextBut2.style.cssText='background-Color: lightblue; border: 2px  solid black; width: 100px; ';
+        nextBut2.style.cssText='background-Color: lightpink; border: 2px  solid black; width: 100px; margin: 100px;';
         nextBut2.innerHTML="Next Trivia";
         nextBut2.addEventListener("click", ()=>{
             if(nextBut2.innerHTML!=""){
@@ -101,7 +100,7 @@ function msg(m){
         });
         msg("Your Score is "+score+" / "+questionList.length , -1);
     } else {
-        nextBut.style.cssText='background-Color: lightblue; border: 2px  solid black; width: 100px; ';
+        nextBut.style.cssText='background-Color: lightpink; border: 2px  solid black; width: 100px; margin: 100px;';
         nextBut.innerHTML="Next Question";
         nextBut.addEventListener("click", ()=>{
             if(nextBut.innerHTML!=""){

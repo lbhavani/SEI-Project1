@@ -7,24 +7,22 @@
     <title>Trivia</title>
 </head>
 <body>
-    <header>Trivia</header>
+    <h1>Trivia</h1>
     <div class='main-grid'>
-        <div id='left-nav'> 
-            <div class='button' id='try1'>try</div>
-        </div>
         <div id='sub-head'>
-            <div id='instr'>Instructions</div>
+            <p>To play Trivia, choose Category, Complexity and select Start button</p>
             <div id='selections'>
-                Category: <select name="category" id="category"></select> <br>
-                Complexity: <select name="complexity" id="complexity">
+                Category: <select name="category" id="category" style="height:30px"></select> <br> <br>
+                Complexity: <select name="complexity" id="complexity" style="height:30px">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
-                </select>
-                <input type="button" value="Start" id='startStop'>
+                </select> <br>
+                <input type="button" value="Start" id='startStop' style="width:70px">
                 
             </div>
         </div>
+
         <div id='question'>
                 <div id="q"></div>
                 <div id="answerCont">
@@ -33,7 +31,6 @@
                 <div id="next"></div>
                 <div id="next2"></div>
         </div>
-        <div id='right-col'>right</div>
         <div id='footer2'> 
             <p id='msg'></p>
             
