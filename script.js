@@ -1,4 +1,3 @@
-const tryButton = document.querySelector('#try1');
 const msgArea = document.querySelector('#msg');
 const q = document.querySelector('#q');
 const answers = document.querySelector('#answers');
@@ -12,6 +11,7 @@ var optionSelected = false;
 var categoryItems = null;
 
 
+
 var curQNo=0;
 var selAnswer= "";
 var score=0;
@@ -21,8 +21,15 @@ function resetQuiz(){
     selAnswer= "";
     score=0;
     msg("");
+    nextBut.style.cssText="";
+    nextBut.innerHTML="";
+    nextBut2.style.cssText="";
+    nextBut2.innerHTML="";
+    q.innerHTML="";
+     
+    clearOptions();
 }
-   
+   //Get Categories & populate.
         axios({
             url: 'https://opentdb.com/api_category.php',
             method: 'get'
@@ -42,7 +49,8 @@ function resetQuiz(){
         });
         
  function startTest(){
-    console.log(`https://opentdb.com/api.php?amount=10&category=${categorySel.value}&difficulty=${complexitySel.value}`);
+
+
     axios({
         url: `https://opentdb.com/api.php?amount=10&category=${categorySel.value}&difficulty=${complexitySel.value}`, 
         method: 'get'   
@@ -52,7 +60,10 @@ function resetQuiz(){
            console.log (response);
            questionList = response.data.results;
            resetQuiz();
-           displayQuestion(0);
+           if(questionList.length>0)
+                displayQuestion(0);
+            else
+                msg("Sorry, Trivia is not available for the category / complexity selected. Please try something else.");
        })
        .catch(error => {
            console.log(error);
@@ -74,7 +85,9 @@ function msg(m){
 
 
  function choiceSel(){
-    console.log("ChoiceSel:"+curQNo);
+    if(optionSelected)
+        return;
+    optionSelected = true;
     selAnswer=this.id;
     this.style.backgroundColor="lightblue";
     
@@ -122,7 +135,7 @@ function clearOptions(){
 }
 
 function displayQuestion(num) {
-    console.log("displayQuestion:"+num);
+    optionSelected=false;
     if(questionList==null || questionList.length<num){
         msg("No Questions. Click start.");
     }
@@ -136,9 +149,7 @@ function displayQuestion(num) {
         choices.splice(randomGen(4),0,questionList[num].correct_answer);
     else
         choices=["True", "False"];
-    console.log(questionList[num]);
-    console.log(choices);
-    console.log(answers);
+    
     for(i=0; i<choices.length; i++){
         var newItem = document.createElement('li')  
         newItem.setAttribute('class', 'choiceStyle');
