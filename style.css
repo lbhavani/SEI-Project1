@@ -25,7 +25,8 @@ body {
         grid-template: repeat(3, 1fr) / repeat(5, 1fr);
         width: 90%;
         height: 90%
-    }
+    
+  }
 
     .button {
         border: 4px solid #295A33;
@@ -44,7 +45,6 @@ body {
 #sub-head {
  grid-row:1 /span1;
  grid-column:1 /span5;
- height: 15%;
 }
 #selections{
     text-align: left;
@@ -63,7 +63,6 @@ body {
 
 }
 #question {
-    border: 0px solid rgb(211, 211, 211);
     grid-row:2 /span1;
     grid-column:1 /span5;
     width: 70% ;

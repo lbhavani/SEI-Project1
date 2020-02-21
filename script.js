@@ -22,9 +22,6 @@ function resetQuiz(){
     score=0;
     msg("");
 }
-
-//Fill-in Categories ..
-    console.log("fillInCatefories:Start");
    
         axios({
             url: 'https://opentdb.com/api_category.php',
@@ -153,38 +150,3 @@ function displayQuestion(num) {
     console.log("End displayQuestion:"+curQNo);
 }
 
-// tryButton.addEventListener('click', ()=> {
-//     axios({
-//      url: 'https://opentdb.com/api.php?amount=10&category=19&difficulty=medium', 
-//      method: 'get'   
-//     })
-//     .then(response => {
-        
-//         console.log (response);
-//         questionList = response.data.results;
-//         resetQuiz();
-//         displayQuestion(0);
-//     })
-//     .catch(error => {
-//         console.log(error);
-//     })
-// });
-
-// var questionList = [
-//     {    category: "Science: Mathematics",
-//         correct_answer: "66",
-//         difficulty: "medium",
-//         incorrect_answers: ["67", "34", "11"],
-//         question: "In a complete graph G, which has 12 vertices, how many edges are there?",
-//         type: "multiple"
-//     },
-//     {
-//         category: "Science: Mathematics",
-//         correct_answer: "True",
-//         difficulty: "medium",
-//         incorrect_answers: ["False"],
-//         question: "The proof for the Chinese Remainder Theorem used in Number Theory was NOT developed by its first publisher, Sun Tzu.",
-//         type: "boolean"
-//     }
-
-// ];
